@@ -1,0 +1,82 @@
+<section class="page-hero">
+  <div class="glow" style="background:#6366f1; width:560px; height:560px; top:-240px; right:-120px;"></div>
+  <div class="container about-hero">
+    <div class="about-hero__copy">
+      <span class="kicker" appReveal>About CrowdPass</span>
+      <h1 class="h-display" appReveal [revealDelay]="60">
+        We help organisers<br /><span class="text-grad">fill every seat</span>
+      </h1>
+      <p class="lead" appReveal [revealDelay]="120">
+        CrowdPass is a modern ticketing platform built in the UK for the people who put on
+        the show. Whether you're running a single club night or a season of seated
+        productions, we give you the tools to sell, scan and sell out - all under your own brand.
+      </p>
+      <div class="about-hero__actions" appReveal [revealDelay]="180">
+        <a routerLink="/contact" class="btn">Work with us <app-icon name="arrow" [size]="18" /></a>
+        <a routerLink="/events" class="btn btn--ghost">See live events</a>
+      </div>
+    </div>
+
+    <div class="about-hero__art" aria-hidden="true" appReveal [revealDelay]="120">
+      <svg viewBox="0 0 320 320">
+        <defs>
+          <linearGradient id="ab1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8b5cf6" /><stop offset="1" stop-color="#22d3ee" />
+          </linearGradient>
+        </defs>
+        <circle class="orbit" cx="160" cy="160" r="120" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1.5" stroke-dasharray="4 9" />
+        <g class="blob">
+          <path fill="url(#ab1)" opacity=".9"
+            d="M160 60c34 0 70 18 80 52s-8 70-32 92-66 30-96 14-48-52-40-86 54-72 88-72z" />
+        </g>
+        <g class="people">
+          <circle cx="120" cy="150" r="14" fill="#fff" opacity=".9" />
+          <circle cx="160" cy="135" r="16" fill="#fff" />
+          <circle cx="200" cy="150" r="14" fill="#fff" opacity=".9" />
+          <rect x="104" y="168" width="32" height="40" rx="16" fill="#fff" opacity=".9" />
+          <rect x="142" y="156" width="36" height="46" rx="18" fill="#fff" />
+          <rect x="184" y="168" width="32" height="40" rx="16" fill="#fff" opacity=".9" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section values-sec">
+  <div class="container">
+    <div class="sec-head" appReveal>
+      <span class="kicker">What we stand for</span>
+      <h2 class="h-section">Principles behind the platform</h2>
+    </div>
+    <div class="values">
+      @for (v of values; track v.title) {
+        <article class="value card" appReveal [revealDelay]="$index * 80">
+          <span class="value__icon"><app-icon [name]="v.icon" [size]="24" /></span>
+          <h3>{{ v.title }}</h3>
+          <p>{{ v.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head" appReveal>
+      <span class="kicker">Our story</span>
+      <h2 class="h-section">How CrowdPass grew up</h2>
+    </div>
+    <div class="timeline">
+      @for (t of timeline; track t.title) {
+        <div class="tl" appReveal [revealDelay]="$index * 90">
+          <span class="tl__dot"></span>
+          <div class="tl__body">
+            <span class="tl__year">{{ t.year }}</span>
+            <h3>{{ t.title }}</h3>
+            <p>{{ t.body }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

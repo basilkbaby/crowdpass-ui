@@ -1,0 +1,126 @@
+[
+  {
+    "id": "mg-sreekumar",
+    "title": "MG Sreekumar — Live Kondattam UK Tour 2026",
+    "category": "Music Concert",
+    "seating": false,
+    "accent": "linear-gradient(135deg, #f59e0b, #ef4444)",
+    "image": "https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg",
+    "description": "One of the most celebrated voices in Malayalam cinema, M.G. Sreekumar brings his iconic playback hits to the UK — an evening of nostalgia, devotion and pure melody spanning five decades of musical brilliance.",
+    "phase": "upcoming",
+    "shows": [
+      { "city": "Leicester", "venue": "Maher Centre", "date": "Fri 30 Oct 2026", "time": "Gates 6:00 PM · Show 7:00 PM", "url": "https://booking.v4entertainments.co.uk/events/bd8ab0ab-ebb5-44d8-9ecb-88671b1e834a", "status": "on-sale" },
+      { "city": "Manchester", "venue": "Forum Centre", "date": "Sat 31 Oct 2026", "time": "Gates 5:00 PM · Show 6:00 PM", "url": "https://booking.v4entertainments.co.uk/events/c5e96655-2b29-42f3-b0c4-e8a6c7f4f642", "status": "on-sale" },
+      { "city": "Cardiff", "venue": "Memo Arts Centre", "date": "Sun 1 Nov 2026", "time": "Gates 4:30 PM · Show 5:30 PM", "url": "https://booking.v4entertainments.co.uk/events/6fca76ca-58ce-4b8b-9b36-61507aaa1aef", "status": "on-sale" },
+      { "city": "London", "venue": "The Royal Regency", "date": "Fri 6 Nov 2026", "time": "Gates 6:00 PM · Show 7:00 PM", "url": "https://booking.v4entertainments.co.uk/events/2413facb-f355-4e82-b6b9-3c2f784a4681", "status": "on-sale" },
+      { "city": "Bournemouth", "venue": "Life Centre", "date": "Sat 7 Nov 2026", "time": "Gates 5:00 PM · Show 6:00 PM", "status": "coming-soon" },
+      { "city": "Worthing", "venue": "Assembly Hall", "date": "Sun 8 Nov 2026", "time": "Gates 5:00 PM · Show 6:00 PM", "status": "coming-soon" }
+    ]
+  },
+  {
+    "id": "dileep-nadir-show",
+    "title": "Dileep Nadir Show @ UK",
+    "category": "Stage Show",
+    "seating": false,
+    "accent": "linear-gradient(135deg, #f97316, #ec4899)",
+    "image": "https://eventmanagementimages.blob.core.windows.net/crowdpass/events/nadirshah-dileep-blackpool.PNG",
+    "description": "Malayalam superstar Dileep live on stage in the UK — a full evening of comedy, music and entertainment.",
+    "phase": "upcoming",
+    "shows": [
+      { "city": "Maidstone", "venue": "Maidstone Leisure Centre", "date": "Sat 22 Aug 2026", "time": "Gates 5:00 PM · Show 6:00 PM", "url": "https://vanchi.crowdpass.co.uk/", "status": "on-sale" },
+      { "city": "Blackpool", "venue": "Winter Gardens Blackpool", "date": "Sat 22 Aug 2026", "time": "Gates 5:00 PM · Show 6:00 PM", "url": "https://manchestergems.crowdpass.co.uk/", "status": "on-sale" }
+    ]
+  },
+  {
+    "id": "mentalist-aathi",
+    "title": "Mentalist Aathi — Aathi's Insomnia UK & Ireland Tour 2026",
+    "category": "Mentalism Show",
+    "seating": false,
+    "accent": "linear-gradient(135deg, #7c3aed, #4f46e5)",
+    "image": "https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg",
+    "description": "Mentalist Aathi brings his mind-bending live show to the UK & Ireland this December — an unforgettable evening of mentalism, illusion and psychological wonder.",
+    "phase": "upcoming",
+    "shows": [
+      { "city": "London", "venue": "The Royal Regency", "date": "Fri 4 Dec 2026", "time": "Gates 6:00 PM · Show 7:00 PM", "status": "coming-soon" },
+      { "city": "TBC", "venue": "Venue to be announced", "date": "Sat 5 Dec 2026", "status": "coming-soon" },
+      { "city": "Bristol", "venue": "Venue to be announced", "date": "Sun 6 Dec 2026", "status": "coming-soon" },
+      { "city": "Birmingham", "venue": "NCC (Imperial Suite)", "date": "Fri 11 Dec 2026", "time": "Gates 6:00 PM · Show 7:00 PM", "status": "coming-soon" },
+      { "city": "Manchester", "venue": "Forum Centre", "date": "Sat 12 Dec 2026", "time": "Gates 5:00 PM · Show 6:00 PM", "status": "coming-soon" },
+      { "city": "Edinburgh", "venue": "BICC (Pentland Suite)", "date": "Sun 13 Dec 2026", "time": "Gates 4:00 PM · Show 5:00 PM", "status": "coming-soon" },
+      { "city": "Dublin", "venue": "Venue to be announced", "date": "Fri 18 Dec 2026", "status": "coming-soon" },
+      { "city": "Belfast", "venue": "Venue to be announced", "date": "Sat 19 Dec 2026", "status": "coming-soon" },
+      { "city": "TBC", "venue": "Venue to be announced", "date": "Sun 20 Dec 2026", "status": "coming-soon" }
+    ]
+  },
+  {
+    "id": "vidhu-prathap",
+    "title": "Vidhu Prathap — Soulful Melodies UK Tour 2027",
+    "category": "Music Concert",
+    "seating": false,
+    "accent": "linear-gradient(135deg, #0ea5e9, #6366f1)",
+    "image": "https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true",
+    "description": "Award-winning Malayalam playback singer Vidhu Prathap brings his chart-topping film songs and soulful compositions to the UK stage. Dates to be announced.",
+    "phase": "tba",
+    "shows": [
+      { "city": "London", "venue": "Venue to be announced", "date": "Date to be announced", "status": "coming-soon" },
+      { "city": "Manchester", "venue": "Venue to be announced", "date": "Date to be announced", "status": "coming-soon" },
+      { "city": "Leicester", "venue": "Venue to be announced", "date": "Date to be announced", "status": "coming-soon" },
+      { "city": "Cardiff", "venue": "Venue to be announced", "date": "Date to be announced", "status": "coming-soon" }
+    ]
+  },
+  {
+    "id": "sithara-malabaricus-2026",
+    "title": "Sithara's Project Malabaricus — UK Tour 2026",
+    "category": "Music Concert",
+    "seating": false,
+    "accent": "linear-gradient(135deg, #475569, #94a3b8)",
+    "image": "https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/rs%3Dw_1280%2Ch_1816.webp/:/rs=w:1160,h:1646",
+    "description": "Sithara's Project Malabaricus toured the UK in spring 2026.",
+    "phase": "past",
+    "shows": [
+      { "city": "Wigan", "venue": "", "date": "Feb – Mar 2026", "status": "sold-out" },
+      { "city": "Leicester", "venue": "", "date": "Feb – Mar 2026", "status": "sold-out" },
+      { "city": "Cambridge", "venue": "", "date": "Feb – Mar 2026", "status": "sold-out" },
+      { "city": "London", "venue": "", "date": "Feb – Mar 2026", "status": "sold-out" },
+      { "city": "Southampton", "venue": "", "date": "Feb – Mar 2026", "status": "sold-out" },
+      { "city": "Cardiff", "venue": "", "date": "Feb – Mar 2026", "status": "sold-out" }
+    ]
+  },
+  {
+    "id": "agam-2025",
+    "title": "AGAM — UK Tour November 2025",
+    "category": "Music Concert",
+    "seating": false,
+    "accent": "linear-gradient(135deg, #7f1d1d, #b91c1c)",
+    "image": "https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/all%20red.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:984,h:1230",
+    "description": "Carnatic progressive rock band AGAM toured the UK in November 2025.",
+    "phase": "past",
+    "shows": [
+      { "city": "London", "venue": "", "date": "November 2025", "status": "sold-out" },
+      { "city": "Cardiff", "venue": "", "date": "November 2025", "status": "sold-out" },
+      { "city": "Cambridge", "venue": "", "date": "November 2025", "status": "sold-out" },
+      { "city": "Manchester", "venue": "", "date": "November 2025", "status": "sold-out" },
+      { "city": "Southampton", "venue": "", "date": "November 2025", "status": "sold-out" },
+      { "city": "Leicester", "venue": "", "date": "November 2025", "status": "sold-out" }
+    ]
+  },
+  {
+    "id": "vidhu-prathap-jyotsna-2025",
+    "title": "Vidhu Prathap ft. Jyotsna — UK Tour 2025",
+    "category": "Music Concert",
+    "seating": false,
+    "accent": "linear-gradient(135deg, #334155, #64748b)",
+    "image": "https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/dddd.jpg/:/rs=w:984,h:1237",
+    "description": "Vidhu Prathap featuring Jyotsna toured the UK in February 2025.",
+    "phase": "past",
+    "shows": [
+      { "city": "Belfast", "venue": "", "date": "February 2025", "status": "sold-out" },
+      { "city": "London", "venue": "", "date": "February 2025", "status": "sold-out" },
+      { "city": "Manchester", "venue": "", "date": "February 2025", "status": "sold-out" },
+      { "city": "Southampton", "venue": "", "date": "February 2025", "status": "sold-out" },
+      { "city": "Leicester", "venue": "", "date": "February 2025", "status": "sold-out" },
+      { "city": "Stoke on Trent", "venue": "", "date": "February 2025", "status": "sold-out" },
+      { "city": "Cardiff", "venue": "", "date": "February 2025", "status": "sold-out" }
+    ]
+  }
+]

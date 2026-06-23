@@ -1,0 +1,180 @@
+:host { display: flex; }
+
+.ev {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.45s var(--ease), border-color 0.45s, box-shadow 0.45s;
+  flex: 1;              /* fill the host's width */
+  min-width: 0;
+  /* reset for when the card is a <button> */
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  appearance: none;
+}
+.ev:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+}
+
+.ev__art {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.ev__pattern { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ev__orb { transform-origin: 160px 30px; animation: float-y 7s ease-in-out infinite; }
+.ev:hover .ev__orb { animation-duration: 4s; }
+
+/* poster image */
+.ev__img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.ev:hover .ev__img { transform: scale(1.06); }
+.ev__img-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.34) 0%, rgba(0,0,0,.05) 35%, rgba(0,0,0,.42) 100%);
+}
+
+.ev__cat {
+  position: absolute;
+  top: 0.85rem; left: 0.85rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(6px);
+  color: #fff;
+}
+.ev__seat {
+  position: absolute;
+  bottom: 0.85rem; left: 0.85rem;
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.72rem; font-weight: 600;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(6px);
+  color: #fff;
+}
+.ev__status {
+  position: absolute;
+  top: 0.85rem; right: 0.85rem;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: #fff; color: #0b0b16;
+}
+.ev__status[data-status='selling-fast'] { background: var(--amber); }
+.ev__status[data-status='sold-out'] { background: #ef4444; color: #fff; }
+.ev__status[data-status='coming-soon'] { background: rgba(255,255,255,.85); }
+.ev__status[data-status='tour'] { background: var(--grad-brand); color: #fff; }
+.ev__status[data-status='tba'] { background: var(--cyan); color: #0b0b16; }
+.ev__status[data-status='past'] { background: rgba(15, 15, 25, 0.72); color: #fff; backdrop-filter: blur(6px); }
+
+/* finished events: drain the artwork colour a little */
+.ev__art--muted { filter: saturate(0.45) brightness(0.82); }
+
+.ev__body { padding: 1.4rem 1.45rem 1.55rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.ev__title { font-size: 1.32rem; margin: 0; }
+.ev__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; color: var(--text-dim); font-size: 0.9rem; margin: 0; }
+.ev__meta .dot { opacity: 0.5; }
+.ev__time { margin: -0.1rem 0 0; font-size: 0.84rem; color: var(--cyan); }
+.ev__link {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 0.92rem;
+  color: var(--cyan);
+}
+.ev:hover .ev__link app-icon { transform: translateX(4px); }
+.ev__link app-icon { transition: transform 0.35s var(--ease); }
+
+/* ---- Tour variant (a clickable card/button) ---- */
+.ev--tour { cursor: pointer; }
+.ev--tour:hover { transform: translateY(-6px); }
+.ev--tour.is-open {
+  border-color: rgba(139, 92, 246, 0.55);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ---- Non-interactive cards (coming soon / finished) ---- */
+.ev--static,
+.ev--done { cursor: default; }
+.ev--static:hover,
+.ev--done:hover { transform: none; box-shadow: none; border-color: var(--border); }
+.ev__ended {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 0.9rem;
+  color: var(--text-dim);
+}
+.ev__done {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 0.9rem;
+  color: #34d399;
+}
+.ev__done app-icon { color: #34d399; }
+/* touring cities shown as scannable chips */
+.ev__tourline {
+  font-size: 0.8rem; color: var(--text-dim);
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.ev__cities {
+  display: flex; align-items: center; gap: 0.4rem;
+  flex-wrap: wrap;   /* show every city, no clipping */
+}
+.ev__city {
+  font-size: 0.78rem; font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+/* button that opens the dates modal */
+.ev__cta {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 0.92rem;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+.ev__cta:hover { transform: translateY(-2px); border-color: var(--violet-bright); background: var(--surface); }
+.ev__cta-count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.35rem; height: 1.35rem;
+  font-size: 0.74rem; font-weight: 700;
+  color: #fff;
+  background: var(--grad-brand);
+  border-radius: 999px;
+  padding: 0 0.35rem;
+}
+.ev__cta-chev { color: var(--text-soft); transition: transform 0.35s var(--ease); }
+.ev--tour.is-open .ev__cta-chev { transform: rotate(180deg); }

@@ -1,0 +1,48 @@
+<section class="page-hero">
+  <div class="glow" style="background:#7c3aed; width:520px; height:520px; top:-220px; left:-100px;"></div>
+  <div class="container">
+    <span class="kicker" appReveal>What's on</span>
+    <h1 class="h-display" appReveal [revealDelay]="60">
+      Discover events <span class="text-grad">near you</span>
+    </h1>
+    <p class="lead" appReveal [revealDelay]="120">
+      Browse what's on, pick an event and tap through to grab your tickets - seated or standing.
+    </p>
+  </div>
+</section>
+
+<section class="section events-sec">
+  <div class="container">
+    <!-- Lifecycle toggle: all / upcoming / dates TBC / past -->
+    <div class="timing" appReveal role="tablist">
+      @for (t of tabs; track t.id) {
+        <button class="tab" role="tab" [class.active]="view() === t.id"
+          [attr.aria-selected]="view() === t.id" (click)="setView(t.id)">
+          {{ t.label }}
+          <span class="tab__count">{{ countFor(t.id) }}</span>
+        </button>
+      }
+    </div>
+
+    <!-- Category filter, scoped to the active phase -->
+    <div class="filters" appReveal>
+      @for (c of categories(); track c) {
+        <button class="chip" [class.active]="filter() === c" (click)="setFilter(c)">{{ c }}</button>
+      }
+    </div>
+
+    @if (visible().length) {
+      <app-events-grid [events]="visible()" />
+    } @else {
+      <p class="empty">{{ emptyMessage() }}</p>
+    }
+
+    <div class="events-cta card" appReveal>
+      <div>
+        <h2 class="h-section">Running your own event?</h2>
+        <p class="lead">Get your event listed here and selling on its own CrowdPass site.</p>
+      </div>
+      <a routerLink="/contact" class="btn">List your event <app-icon name="arrow" [size]="18" /></a>
+    </div>
+  </div>
+</section>

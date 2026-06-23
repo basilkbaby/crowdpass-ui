@@ -1,0 +1,121 @@
+<!-- Shared artwork header for every card variant -->
+<ng-template #art>
+  <div class="ev__art" [class.ev__art--muted]="isPast" [style.background]="event.accent">
+    @if (event.image) {
+      <img class="ev__img" [src]="event.image" [alt]="event.title" loading="lazy" />
+      <span class="ev__img-veil"></span>
+    } @else {
+      <svg class="ev__pattern" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <pattern [attr.id]="'dots-' + event.id" width="18" height="18" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.4" fill="rgba(255,255,255,.35)" />
+          </pattern>
+        </defs>
+        <rect width="200" height="120" [attr.fill]="'url(#dots-' + event.id + ')'" />
+        <circle class="ev__orb" cx="160" cy="30" r="46" fill="rgba(255,255,255,.18)" />
+      </svg>
+    }
+
+    <span class="ev__cat">{{ event.category }}</span>
+    @if (event.seating) {
+      <span class="ev__seat" title="Reserved seating">
+        <app-icon name="seat" [size]="14" /> Seated
+      </span>
+    }
+
+    @if (isPast) {
+      <span class="ev__status" data-status="past">Ended</span>
+    } @else if (isTba) {
+      <span class="ev__status" data-status="tba">Date TBC</span>
+    } @else if (isTour) {
+      <span class="ev__status" data-status="tour">{{ event.shows.length }} dates</span>
+    } @else {
+      <span class="ev__status" [attr.data-status]="show.status">{{ statusLabel(show.status) }}</span>
+    }
+  </div>
+</ng-template>
+
+@if (isPast) {
+  <!-- Finished event: not interactive, shows a completed badge -->
+  <article class="ev card ev--done">
+    <ng-container *ngTemplateOutlet="art" />
+    <div class="ev__body">
+      <h3 class="ev__title">{{ event.title }}</h3>
+
+      @if (isTour) {
+        <span class="ev__tourline">Toured {{ tourCities.length }} cities</span>
+        <div class="ev__cities">
+          @for (c of tourCities; track c) {
+            <span class="ev__city">{{ c }}</span>
+          }
+        </div>
+      } @else {
+        <p class="ev__meta">
+          <span>{{ show.date }}</span>
+          <span class="dot">•</span>
+          <span>{{ show.venue }}, {{ show.city }}</span>
+        </p>
+      }
+
+      <span class="ev__done">
+        <app-icon name="spark" [size]="16" /> Concluded · Memories made
+      </span>
+    </div>
+  </article>
+} @else if (isTour) {
+  <!-- Touring act: clicking opens a full-width detail row (handled by the grid) -->
+  <button type="button" class="ev card ev--tour" [class.is-open]="expanded"
+    (click)="toggle.emit()" [attr.aria-expanded]="expanded">
+    <ng-container *ngTemplateOutlet="art" />
+    <div class="ev__body">
+      <h3 class="ev__title">{{ event.title }}</h3>
+
+      <span class="ev__tourline">
+        {{ tourCities.length }} cities@if (isTba) { · dates TBC }
+      </span>
+      <div class="ev__cities">
+        @for (c of tourCities; track c) {
+          <span class="ev__city">{{ c }}</span>
+        }
+      </div>
+
+      <span class="ev__cta">
+        <span>{{ tourCta }}</span>
+        <span class="ev__cta-count">{{ event.shows.length }}</span>
+        <app-icon name="chevron" [size]="16" class="ev__cta-chev" />
+      </span>
+    </div>
+  </button>
+} @else if (!singleHasLink) {
+  <!-- Single event without a live link (coming soon): not clickable -->
+  <article class="ev card ev--static">
+    <ng-container *ngTemplateOutlet="art" />
+    <div class="ev__body">
+      <h3 class="ev__title">{{ event.title }}</h3>
+      <p class="ev__meta">
+        <span>{{ show.date }}</span>
+        <span class="dot">•</span>
+        <span>{{ show.venue }}, {{ show.city }}</span>
+      </p>
+      @if (show.time) { <p class="ev__time">{{ show.time }}</p> }
+      <span class="ev__ended">Coming soon</span>
+    </div>
+  </article>
+} @else {
+  <!-- Single event: the whole card links straight out -->
+  <a class="ev card" [href]="show.url" target="_blank" rel="noopener">
+    <ng-container *ngTemplateOutlet="art" />
+    <div class="ev__body">
+      <h3 class="ev__title">{{ event.title }}</h3>
+      <p class="ev__meta">
+        <span>{{ show.date }}</span>
+        <span class="dot">•</span>
+        <span>{{ show.venue }}, {{ show.city }}</span>
+      </p>
+      @if (show.time) { <p class="ev__time">{{ show.time }}</p> }
+      <span class="ev__link">
+        {{ singleCta }} <app-icon name="arrow" [size]="16" />
+      </span>
+    </div>
+  </a>
+}

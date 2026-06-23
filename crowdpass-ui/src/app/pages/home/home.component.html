@@ -1,0 +1,219 @@
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="glow hero__glow-1" style="background:#7c3aed"></div>
+  <div class="glow hero__glow-2" style="background:#22d3ee"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <h1 class="h-display">
+        Every event<br />
+        deserves a<br />
+        <span class="text-grad">full house</span>
+      </h1>
+      <p class="lead">
+        CrowdPass is the modern ticketing platform for every kind of event - from
+        general-admission club nights to live music concerts, branded
+        subdomains and complete white-label portals.
+      </p>
+      <div class="hero__actions">
+        <a routerLink="/contact" class="btn">Start selling <app-icon name="arrow" [size]="18" /></a>
+        <a routerLink="/events" class="btn btn--ghost">Browse events</a>
+      </div>
+
+      <ul class="hero__points">
+        <li><app-icon name="check" [size]="18" /> Easy to set up</li>
+        <li><app-icon name="check" [size]="18" /> Secure payments</li>
+        <li><app-icon name="check" [size]="18" /> Any event, any size</li>
+      </ul>
+    </div>
+
+    <!-- Animated SVG scene -->
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 460 460" class="hero__svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8b5cf6" />
+            <stop offset="1" stop-color="#6366f1" />
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#22d3ee" />
+            <stop offset="1" stop-color="#7c3aed" />
+          </linearGradient>
+          <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#ec4899" />
+            <stop offset="1" stop-color="#f97316" />
+          </linearGradient>
+        </defs>
+
+        <!-- rotating dashed orbit -->
+        <circle class="orbit" cx="230" cy="230" r="180" fill="none"
+          stroke="rgba(255,255,255,.12)" stroke-width="1.5" stroke-dasharray="6 10" />
+
+        <!-- main ticket -->
+        <g class="ticket ticket--main">
+          <rect x="120" y="170" width="220" height="120" rx="18" fill="url(#g1)" />
+          <line x1="270" y1="178" x2="270" y2="282" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-dasharray="6 6" />
+          <circle cx="270" cy="170" r="9" fill="#0b0b16" />
+          <circle cx="270" cy="290" r="9" fill="#0b0b16" />
+          <rect x="140" y="196" width="100" height="10" rx="5" fill="rgba(255,255,255,.85)" />
+          <rect x="140" y="216" width="70" height="8" rx="4" fill="rgba(255,255,255,.55)" />
+          <rect x="140" y="244" width="50" height="22" rx="6" fill="rgba(255,255,255,.9)" />
+          <!-- mini QR -->
+          <g transform="translate(286,196)">
+            <rect width="40" height="40" rx="6" fill="rgba(255,255,255,.92)" />
+            <rect x="6" y="6" width="10" height="10" fill="#0b0b16" />
+            <rect x="24" y="6" width="10" height="10" fill="#0b0b16" />
+            <rect x="6" y="24" width="10" height="10" fill="#0b0b16" />
+            <rect x="24" y="24" width="5" height="5" fill="#0b0b16" />
+            <rect x="29" y="29" width="5" height="5" fill="#0b0b16" />
+          </g>
+        </g>
+
+        <!-- floating mini tickets -->
+        <g class="ticket ticket--a">
+          <rect x="60" y="90" width="86" height="50" rx="10" fill="url(#g2)" />
+          <rect x="72" y="104" width="44" height="7" rx="3.5" fill="rgba(255,255,255,.85)" />
+          <rect x="72" y="118" width="30" height="6" rx="3" fill="rgba(255,255,255,.5)" />
+        </g>
+        <g class="ticket ticket--b">
+          <rect x="320" y="320" width="92" height="54" rx="10" fill="url(#g3)" />
+          <rect x="332" y="335" width="48" height="7" rx="3.5" fill="rgba(255,255,255,.9)" />
+          <rect x="332" y="350" width="32" height="6" rx="3" fill="rgba(255,255,255,.55)" />
+        </g>
+
+        <!-- seat dots grid -->
+        <g class="seats">
+          <g fill="#22d3ee">
+            <circle cx="70" cy="320" r="5" /><circle cx="88" cy="320" r="5" />
+            <circle cx="106" cy="320" r="5" /><circle cx="70" cy="338" r="5" />
+            <circle cx="88" cy="338" r="5" />
+          </g>
+          <circle cx="106" cy="338" r="5" fill="rgba(255,255,255,.25)" />
+        </g>
+
+        <!-- pulsing check-in ping -->
+        <g transform="translate(360,120)">
+          <circle class="ping" r="16" fill="none" stroke="#34d399" stroke-width="2" />
+          <circle r="9" fill="#34d399" />
+          <path d="M-4 0l3 3 5-6" stroke="#0b0b16" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- marquee strip -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      @for (item of marquee.concat(marquee); track $index) {
+        <span>{{ item }}</span><span class="marquee__dot">✦</span>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EVENTS PREVIEW ============================ -->
+<section class="section" id="events">
+  <div class="container">
+    <div class="sec-head sec-head--row" appReveal>
+      <div>
+        <span class="kicker">What's on</span>
+        <h2 class="h-section">Live on CrowdPass right now</h2>
+        <p class="lead">Browse what's on and tap through to grab your tickets.</p>
+      </div>
+      <a routerLink="/events" class="btn btn--ghost">All events <app-icon name="arrow" [size]="18" /></a>
+    </div>
+
+    <app-events-grid [events]="previewEvents()" />
+  </div>
+</section>
+
+<!-- ============================ FEATURES ============================ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="sec-head" appReveal>
+      <span class="kicker">Why CrowdPass</span>
+      <h2 class="h-section">One platform, <span class="text-grad">end to end</span></h2>
+      <p class="lead">From the first ticket sold to the final guest scanned in - CrowdPass handles it all.</p>
+    </div>
+
+    <div class="feat-grid">
+      @for (f of features; track f.title) {
+        <article class="feat card" appReveal [revealDelay]="$index * 80">
+          <span class="feat__icon"><app-icon [name]="f.icon" [size]="26" /></span>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="section steps-sec">
+  <div class="container">
+    <div class="sec-head" appReveal>
+      <span class="kicker">How it works</span>
+      <h2 class="h-section">Live in three steps</h2>
+    </div>
+    <div class="steps">
+      @for (s of steps; track s.n) {
+        <div class="step" appReveal [revealDelay]="$index * 120">
+          <span class="step__n">{{ s.n }}</span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.body }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRODUCT TIERS (no pricing) ============================ -->
+<section class="section" id="solutions">
+  <div class="container">
+    <div class="sec-head" appReveal>
+      <span class="kicker">Solutions</span>
+      <h2 class="h-section">Pick the way you <span class="text-grad">go live</span></h2>
+      <p class="lead">Whether you run a single night or hundreds of events, there's a CrowdPass that fits.</p>
+    </div>
+
+    <div class="tier-grid">
+      @for (t of tiers; track t.id) {
+        <article class="tier card" [class.tier--hot]="t.highlight" appReveal [revealDelay]="$index * 90">
+          @if (t.highlight) { <span class="tier__badge">Most popular</span> }
+          <h3 class="tier__name">{{ t.name }}</h3>
+          <p class="tier__tagline">{{ t.tagline }}</p>
+          @if (t.example) {
+            <code class="tier__example">{{ t.example }}</code>
+          }
+
+          <div class="tier__for">
+            @for (s of t.suitableFor; track s) { <span>{{ s }}</span> }
+          </div>
+
+          <ul class="tier__features">
+            @for (feat of t.features; track feat) {
+              <li><app-icon name="check" [size]="16" /> {{ feat }}</li>
+            }
+          </ul>
+
+          <a routerLink="/contact" class="btn" [class.btn--ghost]="!t.highlight">Talk to us</a>
+        </article>
+      }
+    </div>
+
+    <p class="tier-note" appReveal>
+      <app-icon name="spark" [size]="16" />
+      Tailored quote on request - every event is different, so we'll build a plan around yours.
+    </p>
+  </div>
+</section>
+
+<!-- ============================ STATS ============================ -->
+<section class="section stats-sec">
+  <div class="container stats" appReveal>
+    <div class="stat"><span class="stat__num text-grad">24/7</span><span class="stat__label">Online ticket sales</span></div>
+    <div class="stat"><span class="stat__num text-grad">QR</span><span class="stat__label">Verified check-in</span></div>
+    <div class="stat"><span class="stat__num text-grad">100%</span><span class="stat__label">Secure payments</span></div>
+    <div class="stat"><span class="stat__num text-grad">Live</span><span class="stat__label">Sales &amp; attendance</span></div>
+  </div>
+</section>
